@@ -1,0 +1,51 @@
+.clearfix:after {
+  content: '';
+  display: table;
+  width: 100%;
+  clear: both;
+}
+
+.container {
+  width: 1350px;
+  margin: 0 auto;
+}
+
+#neckArea {
+  border: blue thin solid;
+  width: 1080px;
+  height: 700px;
+  float: left;
+  background: url("../img/tele_neck.png") no-repeat center;
+}
+
+#controlArea {
+  border: green solid thin;
+  width: 260px;
+  height: 700px;
+  float: right;
+}
+
+.controlArea_button {
+  font-size: 24px;
+  width: 220px;
+  text-align: center;
+  border: black solid thin;
+  margin-top: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 8px;
+  padding-left: 8px;
+  border-radius: 25px;
+}
+
+#pointer {
+  font-size: 24px;
+  margin-top: 334px;
+  margin-left: 496px;
+  height: 31px;
+  width: 31px;
+  text-align: center;
+  background-color: yellow;
+  border: thin solid black;
+  border-radius: 50%;
+}
