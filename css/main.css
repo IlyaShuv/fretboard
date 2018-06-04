@@ -44,6 +44,11 @@
   margin-left: 42px;
 }
 
+.controlArea_button-active {
+  background-color: #FFCC00;
+  border-width: thick;
+}
+
 #controlArea_answersCount {
   font-size: 40px;
   margin-top: 30px;

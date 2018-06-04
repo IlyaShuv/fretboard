@@ -43,6 +43,10 @@
 		width: 150px;
 		margin-left: 42px;
 	}
+	&-active {
+		background-color: #FFCC00;
+		border-width: thick;
+	}
 }
 
 #controlArea_answersCount {

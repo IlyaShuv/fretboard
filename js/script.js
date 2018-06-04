@@ -18,14 +18,26 @@ var QuestNote = "C";
 var AnswNote = "C";
 var trueCounter = 0;
 var allCounter = 0;
+var fretsCount = 12;
+var modeStrings = 6;
+var modeFrets = 12;
+var modeOffsetString = 0;
+var strMode = "";
 
 function neckNotes() {
-	var strNum = Math.ceil(Math.random()*6);
- 	var fretNum = Math.ceil(Math.random()*12);
+	var strNum = Math.ceil(Math.random()*modeStrings+modeOffsetString);
+ 	var fretNum = Math.ceil(Math.random()*modeFrets);
 	$("#neckArea_pointer").css("margin-top", neck.frets[strNum-1][fretNum-1][0]+"px").css("margin-left", neck.frets[strNum-1][fretNum-1][1]+"px");
 	$("#neckArea_string").html(strNum);
 	$("#neckArea_fret").html(fretNum);
 	QuestNote = neck.notes[strNum-1][fretNum-1];
+}
+
+function reset() {
+	trueCounter = 0;
+	allCounter = 0;
+	$("#controlArea_trueAns").html(trueCounter);
+	$("#controlArea_allAns").html(allCounter);
 }
 
 function start() {
@@ -47,12 +59,36 @@ function start() {
 		$("#controlArea_allAns").html(allCounter);
 		neckNotes();
 	});
+
 	$(".controlArea_button-reset").click(function() {
-		trueCounter = 0;
-		allCounter = 0;
-		$("#controlArea_trueAns").html(trueCounter);
-		$("#controlArea_allAns").html(allCounter);
-	});
+		reset();
+	});	
+
+	$(".controlArea_button-mode").click(function() {
+		$(".controlArea_button-active").removeClass("controlArea_button-active");
+		$(this).addClass("controlArea_button-active");
+		strMode = $(this).html();
+		switch (strMode) {
+			case "Все струны до 3 лада": 
+				modeFrets = 3;
+				modeStrings = 6;
+				modeOffsetString = 0;
+				break;
+			case "5,6 струны": 
+				modeFrets = 12;
+				modeStrings = 2;
+				modeOffsetString = 4;
+				break;
+			case "Весь гриф":
+				modeFrets = 12;
+				modeStrings = 6;
+				modeOffsetString = 0;
+				break;
+		}
+		reset();
+		neckNotes();
+		$(".neckArea_answer").css("background-color", "white");
+	}); 
 }
 
 
