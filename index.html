@@ -4,22 +4,49 @@
 	<title>Определение нот на грифе</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="js/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 	<div class="container">
 		<div id="neckArea">
-			<div id="pointer">?</div>
+			<div id="neckArea_fretboard">
+				<div id="neckArea_pointer">?</div>
+			</div>
+			<div id="neckArea_answers">
+				 Какая нота находитя на <span id="neckArea_string"></span> струне на <span id="neckArea_fret"></span> ладу?<br>
+				<p class="neckArea_answer neckArea_answer-ansMain">C</p>
+				<p class="neckArea_answer neckArea_answer-ansAlt">C#/Db</p>
+				<p class="neckArea_answer neckArea_answer-ansMain">D</p>
+				<p class="neckArea_answer neckArea_answer-ansAlt">D#/Eb</p>
+				<p class="neckArea_answer neckArea_answer-ansMain">E</p>
+				<p class="neckArea_answer neckArea_answer-ansMain">F</p><br>
+				<p class="neckArea_answer neckArea_answer-ansAlt">F#/Gb</p>
+				<p class="neckArea_answer neckArea_answer-ansMain">G</p>
+				<p class="neckArea_answer neckArea_answer-ansAlt">G#/Ab</p>
+				<p class="neckArea_answer neckArea_answer-ansMain">A</p>
+				<p class="neckArea_answer neckArea_answer-ansAlt">A#/Bb</p>
+				<p class="neckArea_answer neckArea_answer-ansMain">B</p>
+			</div>
 		</div>
 
 		<div id="controlArea">
 			<div class="controlArea_button">Все струны до 3 лада</div>
 			<div class="controlArea_button">5,6 струны</div>
 			<div class="controlArea_button">Весь гриф</div>
+			<div id="controlArea_answersCount">
+				<span id="controlArea_trueAns">0</span>/<span id="controlArea_allAns">0</span>
+			</div>
+			<div class="controlArea_button controlArea_button-reset">Обнулить!</div>
 		</div>
 	</div>	
 
 	<footer>
 		
 	</footer>
+
+	<script>
+		start();
+	</script>
 </body>
 </html>

@@ -11,7 +11,7 @@
 }
 
 #neckArea {
-  border: blue thin solid;
+  border: #56382e thin solid;
   width: 1080px;
   height: 700px;
   float: left;
@@ -19,7 +19,7 @@
 }
 
 #controlArea {
-  border: green solid thin;
+  border: #56382e solid thin;
   width: 260px;
   height: 700px;
   float: right;
@@ -29,6 +29,7 @@
   font-size: 24px;
   width: 220px;
   text-align: center;
+  cursor: pointer;
   border: black solid thin;
   margin-top: 30px;
   padding-top: 10px;
@@ -38,14 +39,65 @@
   border-radius: 25px;
 }
 
-#pointer {
+.controlArea_button-reset {
+  width: 150px;
+  margin-left: 42px;
+}
+
+#controlArea_answersCount {
+  font-size: 40px;
+  margin-top: 30px;
+  margin-left: 100px;
+}
+
+#neckArea_fretboard {
+  border: blue thin solid;
+  height: 465px;
+}
+
+#neckArea_pointer {
   font-size: 24px;
-  margin-top: 334px;
-  margin-left: 496px;
+  margin-top: 403px;
+  margin-left: 1037px;
   height: 31px;
   width: 31px;
   text-align: center;
   background-color: yellow;
   border: thin solid black;
   border-radius: 50%;
+}
+
+#neckArea_answers {
+  font-size: 25px;
+  float: right;
+  margin-right: 90px;
+  width: 500px;
+  border: black thin solid;
+  border-radius: 20px;
+  padding-top: 10px;
+  padding-left: 32px;
+  padding-bottom: 10px;
+}
+
+.neckArea_answer {
+  display: inline-block;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  border: black thin solid;
+  border-radius: 50%;
+  height: 35px;
+  width: 70px;
+  margin-top: 16px;
+  margin-bottom: 0;
+  padding-top: 19px;
+  padding-bottom: 17px;
+}
+
+#neckArea_string {
+  color: red;
+}
+
+#neckArea_fret {
+  color: red;
 }
