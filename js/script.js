@@ -44,6 +44,7 @@ function initialQuestion() {
 	$(".neckArea_answer-true").removeClass("neckArea_answer-true");
 	$(".neckArea_answer-false").removeClass("neckArea_answer-false");
 	$("#neckArea_infoString").html("Какая нота находитя на <span id='neckArea_string'></span> струне на <span id='neckArea_fret'></span> ладу?");
+	$("#neckArea_nextButton").css("display", "none");
 }
 
 function start() {
@@ -56,17 +57,25 @@ function start() {
 		if (QuestNote == AnswNote) {
 			trueCounter++;
 			$(this).addClass("neckArea_answer-true");
-			$("#neckArea_infoString").html("Верно!<span id='neckArea_nextButton'>Следующий вопрос</span>");
+			$("#neckArea_infoString").html("Верно!");
+			$("#neckArea_nextButton").css("display", "inline-block");
 		}
 		else {
 			$(this).addClass("neckArea_answer-false");
 			$("p:contains("+QuestNote+")").addClass("neckArea_answer-true");
-			$("#neckArea_infoString").html("Неверно!<span id='neckArea_nextButton'>Следующий вопрос</span>");
+			$("#neckArea_infoString").html("Неверно!");
+			$("#neckArea_nextButton").css("display", "inline-block");
 		}
 		allCounter++;
 		$("#controlArea_trueAns").html(trueCounter);
 		$("#controlArea_allAns").html(allCounter);
+		$(".neckArea_answer").css("pointer-events", "none");
+	});
 
+	$("#neckArea_nextButton").click(function() {
+		initialQuestion();
+		neckNotes();
+		$(".neckArea_answer").css("pointer-events", "auto");
 	});
 
 	$(".controlArea_button-reset").click(function() {

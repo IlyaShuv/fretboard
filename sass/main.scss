@@ -94,15 +94,18 @@ body {
 
 #neckArea_infoString {
 	text-align: center;
+	display: inline-block;
 }
 
 #neckArea_nextButton {
+	display: none;
+	width: 220px;
 	border: thin solid black;
 	border-radius: 15px;
 	background-color: #FFFF55;
 	padding: {
-		top: 2px;
-		bottom: 2px;
+		top: 0;
+		bottom: 0;
 		right: 10px;
 		left: 10px;
 	}
@@ -117,7 +120,7 @@ body {
 	}
 }
 
-#neckArea_ansButtons {
+.neckArea_blockCenter {
 	text-align: center;
 }
 
