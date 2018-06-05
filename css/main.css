@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900");
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
 .clearfix:after {
   content: '';
   display: table;
@@ -6,7 +11,7 @@
 }
 
 .container {
-  width: 1350px;
+  width: 1360px;
   margin: 0 auto;
 }
 
@@ -20,33 +25,42 @@
 
 #controlArea {
   border: #56382e solid thin;
-  width: 260px;
+  width: 270px;
   height: 700px;
   float: right;
 }
 
 .controlArea_button {
-  font-size: 24px;
-  width: 220px;
+  font-size: 23px;
+  width: 246px;
   text-align: center;
   cursor: pointer;
   border: black solid thin;
   margin-top: 30px;
+  margin-left: 7px;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-right: 8px;
-  padding-left: 8px;
+  padding-right: 4px;
+  padding-left: 4px;
   border-radius: 25px;
 }
 
 .controlArea_button-reset {
   width: 150px;
-  margin-left: 42px;
+  margin-left: 52px;
 }
 
 .controlArea_button-active {
-  background-color: #FFCC00;
-  border-width: thick;
+  background-color: #EAEAEA;
+  border-width: medium;
+  font-weight: 600;
+  width: 242px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.controlArea_button:hover {
+  font-weight: 600;
 }
 
 #controlArea_answersCount {
@@ -56,8 +70,8 @@
 }
 
 #neckArea_fretboard {
-  border: blue thin solid;
-  height: 465px;
+  border: thin solid rgba(0, 0, 0, 0);
+  height: 455px;
 }
 
 #neckArea_pointer {
@@ -72,15 +86,42 @@
   border-radius: 50%;
 }
 
+#neckArea_infoString {
+  text-align: center;
+}
+
+#neckArea_nextButton {
+  border: thin solid black;
+  border-radius: 15px;
+  background-color: #FFFF55;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-left: 15px;
+}
+
+#neckArea_nextButton:hover {
+  font-weight: 600;
+  padding-right: 9px;
+  padding-left: 9px;
+  margin-left: 12px;
+}
+
+#neckArea_ansButtons {
+  text-align: center;
+}
+
 #neckArea_answers {
   font-size: 25px;
   float: right;
   margin-right: 90px;
-  width: 500px;
+  width: 530px;
   border: black thin solid;
   border-radius: 20px;
   padding-top: 10px;
-  padding-left: 32px;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-bottom: 10px;
 }
 
@@ -99,10 +140,42 @@
   padding-bottom: 17px;
 }
 
+.neckArea_answer:hover {
+  font-weight: 700;
+  border-width: medium;
+  width: 66px;
+  padding-top: 17px;
+  padding-bottom: 15px;
+}
+
+.neckArea_answer-ansAlt {
+  background-color: #F2F2F2;
+}
+
+.neckArea_answer-true {
+  font-weight: 700;
+  border-width: medium;
+  width: 66px;
+  padding-top: 17px;
+  padding-bottom: 15px;
+  background-color: #00CC00;
+}
+
+.neckArea_answer-false {
+  font-weight: 700;
+  border-width: medium;
+  width: 66px;
+  padding-top: 17px;
+  padding-bottom: 15px;
+  background-color: red;
+}
+
 #neckArea_string {
   color: red;
+  font-size: 26px;
 }
 
 #neckArea_fret {
   color: red;
+  font-size: 26px;
 }
