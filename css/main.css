@@ -81,9 +81,20 @@ body {
   background: url("../img/tele_neck.png") no-repeat center;
 }
 
+#neckArea_fretButtonTitle {
+  vertical-align: top;
+}
+
+#neckArea_fretTypeButtons {
+  font-size: 40px;
+  color: #333333;
+  margin-top: 60px;
+  margin-left: 100px;
+}
+
 #neckArea_fretboard {
   border: thin solid rgba(0, 0, 0, 0);
-  height: 455px;
+  height: 307px;
 }
 
 #neckArea_pointer {
@@ -149,6 +160,28 @@ body {
   font-size: 26px;
 }
 
+.neckArea_fretTypeButton {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border: thin solid #666666;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: -22px;
+}
+
+.neckArea_fretTypeButton:hover {
+  box-shadow: 0 0 8px 3px black;
+}
+
+.neckArea_fretTypeButton-active {
+  border: medium solid #222222;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
 .neckArea_answer {
   display: inline-block;
   font-size: 24px;
@@ -177,7 +210,7 @@ body {
 }
 
 .neckArea_answer-ansAlt {
-  background-color: #F3F3F3;
+  background-color: #F2F2F2;
 }
 
 .neckArea_answer-true {
