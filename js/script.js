@@ -45,6 +45,7 @@ function initialQuestion() {
 	$(".neckArea_answer-false").removeClass("neckArea_answer-false");
 	$("#neckArea_infoString").html("Какая нота находитя на <span id='neckArea_string'></span> струне на <span id='neckArea_fret'></span> ладу?");
 	$("#neckArea_nextButton").css("display", "none");
+	$(".neckArea_answer").css("pointer-events", "auto");
 }
 
 function start() {
@@ -75,7 +76,6 @@ function start() {
 	$("#neckArea_nextButton").click(function() {
 		initialQuestion();
 		neckNotes();
-		$(".neckArea_answer").css("pointer-events", "auto");
 	});
 
 	$(".controlArea_button-reset").click(function() {
