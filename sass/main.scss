@@ -16,19 +16,17 @@ body {
 	margin: 0 auto;
 }
 
-#neckArea {
-	border: #56382e thin solid;
-	width: 1080px;
-	height: 700px;
-	float: left;
-	background: url('../img/tele_neck.png') no-repeat center;
-}
-
 #controlArea {
 	border: #56382e solid thin;
 	width: 270px;
 	height: 700px;
 	float: right;
+	&_answersCount {
+		font-size: 40px;
+		margin: {
+		top: 30px;
+		left: 100px;
+	}
 }
 
 .controlArea_button {
@@ -67,136 +65,130 @@ body {
 	}
 }
 
-#controlArea_answersCount {
-	font-size: 40px;
-	margin: {
-		top: 30px;
-		left: 100px;
+#neckArea {
+	border: #56382e thin solid;
+	width: 1080px;
+	height: 700px;
+	float: left;
+	background: url('../img/tele_neck.png') no-repeat center;
+	&_fretboard {
+		border: thin solid rgba(0,0,0,0);
+		height: 455px;
 	}
-}
-
-#neckArea_fretboard {
-	border: thin solid rgba(0,0,0,0);
-	height: 455px;
-}
-
-#neckArea_pointer {
-	font-size: 24px;
-	margin-top: 403px;
-	margin-left: 1037px;
-	height: 31px;
-	width: 31px;
-	text-align: center;
-	background-color: yellow;
-	border: thin solid black;
-	border-radius: 50%;
-}
-
-#neckArea_infoString {
-	text-align: center;
-	display: inline-block;
-}
-
-#neckArea_nextButton {
-	display: none;
-	width: 220px;
-	border: thin solid black;
-	border-radius: 15px;
-	background-color: #FFFF55;
-	padding: {
-		top: 0;
-		bottom: 0;
-		right: 10px;
-		left: 10px;
+	&_pointer {
+		font-size: 24px;
+		margin-top: 403px;
+		margin-left: 1037px;
+		height: 31px;
+		width: 31px;
+		text-align: center;
+		background-color: yellow;
+		border: thin solid black;
+		border-radius: 50%;
 	}
-	margin-left: 15px;
-	&:hover {
+	&_infoString {
+		text-align: center;
+		display: inline-block;
+	}
+	&_nextButton {
+		display: none;
+		width: 220px;
+		cursor: pointer;
+		border: thin solid black;
+		border-radius: 15px;
+		background-color: #FFFF55;
+		padding: {
+			top: 0;
+			bottom: 0;
+			right: 10px;
+			left: 10px;
+		}
+		margin-left: 15px;
+		/*&:hover {
 		font-weight: 600;
 		padding: {
 			right: 9px;
 			left: 9px;
 		}		
 		margin-left: 12px;
+		}*/
 	}
-}
-
-.neckArea_blockCenter {
-	text-align: center;
-}
-
-#neckArea_answers {
-	font-size: 25px;
-	float: right;
-	margin-right: 90px;
-	width: 530px;
-	border: black thin solid;
-	border-radius: 20px;
-	padding: {
-		top: 10px;
-		left: 20px;
-		right: 20px;
-		bottom: 10px;
-	}
-}
-
-.neckArea_answer {
-	display: inline-block;
-	font-size: 24px;
-	text-align: center;
-	cursor: pointer;
-	border: black thin solid;
-	border-radius: 50%;
-	height: 35px;
-	width: 70px;
-	margin: {
-		top: 16px;
-		bottom: 0;
-	}
-	padding: {
-		top: 19px;
-		bottom: 17px;
-	}
-	&:hover {
-		font-weight: 700;
-		border-width: medium;
-		width: 66px;
+	&_answers {
+		font-size: 25px;
+		float: right;
+		margin-right: 90px;
+		width: 530px;
+		border: black thin solid;
+		border-radius: 20px;
 		padding: {
-			top: 17px;
-			bottom: 15px;
+			top: 10px;
+			left: 20px;
+			right: 20px;
+			bottom: 10px;
 		}
 	}
-	&-ansAlt {
-		background-color: #F2F2F2;
-	}	
-	&-true {
-		font-weight: 700;
-		border-width: medium;
-		width: 66px;
-		padding: {
-			top: 17px;
-			bottom: 15px;
-		}
-		background-color: #00CC00;
+	&_string {
+		color: red;
+		font-size: 26px;
 	}
-
-	&-false {
-		font-weight: 700;
-		border-width: medium;
-		width: 66px;
-		padding: {
-			top: 17px;
-			bottom: 15px;
-		}
-		background-color: red;
+	&_fret {
+		color: red;
+		font-size: 26px;
 	}
 }
 
-#neckArea_string {
-	color: red;
-	font-size: 26px;
-}
-
-#neckArea_fret {
-	color: red;
-	font-size: 26px;
+.neckArea {
+	&_answer {
+		display: inline-block;
+		font-size: 24px;
+		text-align: center;
+		cursor: pointer;
+		border: black thin solid;
+		border-radius: 50%;
+		height: 35px;
+		width: 70px;
+		margin: {
+			top: 16px;
+			bottom: 0;
+		}
+		padding: {
+			top: 19px;
+			bottom: 17px;
+		}
+		&:hover {
+			font-weight: 700;
+			border-width: medium;
+			width: 66px;
+			padding: {
+				top: 17px;
+				bottom: 15px;
+			}
+		}
+		&-ansAlt {
+			background-color: #F4F4F4;
+		}	
+		&-true {
+			font-weight: 700;
+			border-width: medium;
+			width: 66px;
+			padding: {
+				top: 17px;
+				bottom: 15px;
+			}
+			background-color: #00CC00;
+		}
+		&-false {
+			font-weight: 700;
+			border-width: medium;
+			width: 66px;
+			padding: {
+				top: 17px;
+				bottom: 15px;
+			}
+			background-color: red;
+		}
+	}
+	&_blockCenter {
+		text-align: center;
+	}
 }

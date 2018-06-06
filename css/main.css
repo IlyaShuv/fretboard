@@ -94,6 +94,7 @@ body {
 #neckArea_nextButton {
   display: none;
   width: 220px;
+  cursor: pointer;
   border: thin solid black;
   border-radius: 15px;
   background-color: #FFFF55;
@@ -102,13 +103,14 @@ body {
   padding-right: 10px;
   padding-left: 10px;
   margin-left: 15px;
-}
-
-#neckArea_nextButton:hover {
-  font-weight: 600;
-  padding-right: 9px;
-  padding-left: 9px;
-  margin-left: 12px;
+  /*&:hover {
+		font-weight: 600;
+		padding: {
+			right: 9px;
+			left: 9px;
+		}		
+		margin-left: 12px;
+	}*/
 }
 
 .neckArea_blockCenter {
@@ -152,7 +154,7 @@ body {
 }
 
 .neckArea_answer-ansAlt {
-  background-color: #F2F2F2;
+  background-color: #F4F4F4;
 }
 
 .neckArea_answer-true {
