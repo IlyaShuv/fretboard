@@ -17,15 +17,25 @@ body {
 }
 
 #controlArea {
-	border: #56382e solid thin;
 	width: 270px;
 	height: 700px;
 	float: right;
+	border: #56382e solid thin;
+	border-radius: 0 15px 15px 0;
+	background-image: radial-gradient(circle farthest-side at right top, rgba(255, 255, 0, 0.2), rgba(32, 178, 170, 0.2));	
 	&_answersCount {
+		display: inline-block;
+		border: white solid thin;
+		border-radius: 50%;
 		font-size: 40px;
+		width: 150px;
+		height: 150px;
+		background-color: white;
 		margin: {
-		top: 30px;
-		left: 100px;
+			left: 55px;
+			top: 30px;
+		}
+		text-align: center;
 	}
 }
 
@@ -34,7 +44,9 @@ body {
 	width: 246px;
 	text-align: center;
 	cursor: pointer;
-	border: black solid thin;
+	border: white solid thin;
+	border-radius: 25px;
+	background-color: white;
 	margin: {
 		top: 30px;
 		left: 7px;
@@ -45,13 +57,13 @@ body {
 		right: 4px;
 		left: 4px;
 	}
-	border-radius: 25px;
 	&-reset {
 		width: 150px;
 		margin-left: 52px;
 	}
 	&-active {
-		background-color: #EAEAEA;
+		background-color: #F3F3F3;
+		border-color: black;
 		border-width: medium;
 		font-weight: 600;
 		width: 242px;
@@ -66,6 +78,7 @@ body {
 }
 
 #neckArea {
+	border-radius: 15px 0 0 15px;
 	border: #56382e thin solid;
 	width: 1080px;
 	height: 700px;
@@ -92,7 +105,7 @@ body {
 	}
 	&_nextButton {
 		display: none;
-		width: 220px;
+		width: 240px;
 		cursor: pointer;
 		border: thin solid black;
 		border-radius: 15px;
@@ -114,6 +127,7 @@ body {
 		}*/
 	}
 	&_answers {
+		background-image: radial-gradient(circle farthest-side at right top, rgba(32, 178, 170, 0.2), rgba(255, 255, 0, 0.2));
 		font-size: 25px;
 		float: right;
 		margin-right: 90px;
@@ -164,8 +178,11 @@ body {
 				bottom: 15px;
 			}
 		}
+		&-ansMain {
+			background-color: white;
+		}
 		&-ansAlt {
-			background-color: #F4F4F4;
+			background-color: #F3F3F3;
 		}	
 		&-true {
 			font-weight: 700;

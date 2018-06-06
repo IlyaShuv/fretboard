@@ -15,19 +15,26 @@ body {
   margin: 0 auto;
 }
 
-#neckArea {
-  border: #56382e thin solid;
-  width: 1080px;
-  height: 700px;
-  float: left;
-  background: url("../img/tele_neck.png") no-repeat center;
-}
-
 #controlArea {
-  border: #56382e solid thin;
   width: 270px;
   height: 700px;
   float: right;
+  border: #56382e solid thin;
+  border-radius: 0 15px 15px 0;
+  background-image: radial-gradient(circle farthest-side at right top, rgba(255, 255, 0, 0.2), rgba(32, 178, 170, 0.2));
+}
+
+#controlArea_answersCount {
+  display: inline-block;
+  border: white solid thin;
+  border-radius: 50%;
+  font-size: 40px;
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  margin-left: 55px;
+  margin-top: 30px;
+  text-align: center;
 }
 
 .controlArea_button {
@@ -35,14 +42,15 @@ body {
   width: 246px;
   text-align: center;
   cursor: pointer;
-  border: black solid thin;
+  border: white solid thin;
+  border-radius: 25px;
+  background-color: white;
   margin-top: 30px;
   margin-left: 7px;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 4px;
   padding-left: 4px;
-  border-radius: 25px;
 }
 
 .controlArea_button-reset {
@@ -51,7 +59,8 @@ body {
 }
 
 .controlArea_button-active {
-  background-color: #EAEAEA;
+  background-color: #F3F3F3;
+  border-color: black;
   border-width: medium;
   font-weight: 600;
   width: 242px;
@@ -63,10 +72,13 @@ body {
   font-weight: 600;
 }
 
-#controlArea_answersCount {
-  font-size: 40px;
-  margin-top: 30px;
-  margin-left: 100px;
+#neckArea {
+  border-radius: 15px 0 0 15px;
+  border: #56382e thin solid;
+  width: 1080px;
+  height: 700px;
+  float: left;
+  background: url("../img/tele_neck.png") no-repeat center;
 }
 
 #neckArea_fretboard {
@@ -93,7 +105,7 @@ body {
 
 #neckArea_nextButton {
   display: none;
-  width: 220px;
+  width: 240px;
   cursor: pointer;
   border: thin solid black;
   border-radius: 15px;
@@ -110,14 +122,11 @@ body {
 			left: 9px;
 		}		
 		margin-left: 12px;
-	}*/
-}
-
-.neckArea_blockCenter {
-  text-align: center;
+		}*/
 }
 
 #neckArea_answers {
+  background-image: radial-gradient(circle farthest-side at right top, rgba(32, 178, 170, 0.2), rgba(255, 255, 0, 0.2));
   font-size: 25px;
   float: right;
   margin-right: 90px;
@@ -128,6 +137,16 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 10px;
+}
+
+#neckArea_string {
+  color: red;
+  font-size: 26px;
+}
+
+#neckArea_fret {
+  color: red;
+  font-size: 26px;
 }
 
 .neckArea_answer {
@@ -153,8 +172,12 @@ body {
   padding-bottom: 15px;
 }
 
+.neckArea_answer-ansMain {
+  background-color: white;
+}
+
 .neckArea_answer-ansAlt {
-  background-color: #F4F4F4;
+  background-color: #F3F3F3;
 }
 
 .neckArea_answer-true {
@@ -175,12 +198,6 @@ body {
   background-color: red;
 }
 
-#neckArea_string {
-  color: red;
-  font-size: 26px;
-}
-
-#neckArea_fret {
-  color: red;
-  font-size: 26px;
+.neckArea_blockCenter {
+  text-align: center;
 }
