@@ -9,20 +9,20 @@
 </head>
 <body>
 	<div class="container">
-		<div id="neckArea">
-			<div id="neckArea_fretTypeButtons"><span id="neckArea_fretButtonTitle">Гриф:</span>
+		<div id="neckArea"><!--Блок грифа и элемента с кнопками ответа-->
+			<div id="neckArea_fretTypeButtons"><span id="neckArea_fretButtonTitle">Гриф:</span><!--Блок кнопок выбора вида грифа-->
 				<div id="neckArea_teleButton" class="neckArea_fretTypeButton neckArea_fretTypeButton-active"><img src="img/tele_neck_small.png"></div>
 				<div id="neckArea_stratButton" class="neckArea_fretTypeButton"><img src="img/strat_neck_small.png"></div>
 			</div>	
-			<div id="neckArea_fretboard">
-				<div id="neckArea_pointer">?</div>
+			<div id="neckArea_fretboard"><<!--Сам гриф-->
+				<div id="neckArea_pointer">?</div><!--Указатель ноты на грифе-->
 			</div>
-			<div id="neckArea_answers">
+			<div id="neckArea_answers"><!--Элемент с кнопками ответа, текстом вопроса и кнопкой "Следующий вопрос"-->
 				<div class="neckArea_blockCenter">
 					<div id="neckArea_infoString">Какая нота находитя на <span id="neckArea_string"></span> струне на <span id="neckArea_fret"></span> ладу?</div>
-					<div id="neckArea_nextButton">Следующий вопрос</div>
+					<div id="neckArea_nextButton">Следующий вопрос</div><!--Кнопка следующего вопроса-->
 				</div>	
-				<div class="neckArea_blockCenter">
+				<div class="neckArea_blockCenter"><!--Элемент с кнопками ответа-->
 					<p class="neckArea_answer neckArea_answer-ansMain">C </p>
 					<p class="neckArea_answer neckArea_answer-ansAlt">C#/Db </p>
 					<p class="neckArea_answer neckArea_answer-ansMain">D </p>
@@ -39,11 +39,11 @@
 			</div>
 		</div>
 
-		<div id="controlArea">
+		<div id="controlArea"><!--Блок с кнопками управления и индикатором статистики ответов-->
 			<div class="controlArea_button controlArea_button-mode">Все струны до 3 лада</div>
 			<div class="controlArea_button controlArea_button-mode">5,6 струны</div>
 			<div class="controlArea_button controlArea_button-mode controlArea_button-active">Весь гриф</div>
-			<div id="controlArea_answersCount"><br>
+			<div id="controlArea_answersCount"><br><!--Элемент с индикатором статистики ответов-->
 				<span id="controlArea_trueAns">0</span>/<span id="controlArea_allAns">0</span>
 			</div>
 			<div class="controlArea_button controlArea_button-reset">Обнулить</div>
