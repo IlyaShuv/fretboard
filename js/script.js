@@ -14,8 +14,8 @@ var neck = { //Модель грифа - латинское обозначени
 
 };
 
-var QuestNote = "C "; //Загаданная нота
-var AnswNote = "C "; //Нота ответа
+var questNote = "C "; //Загаданная нота
+var answNote = "C "; //Нота ответа
 var trueCounter = 0; //Количество верный ответов
 var allCounter = 0; //Количество заданных вопросов
 var modeStrings = 6; //количество струн, на которых может быть загаданна нота
@@ -29,7 +29,7 @@ function neckNotes() { //функция для генерации ноты на 
 	$("#neckArea_pointer").css("margin-top", neck.frets[strNum-1][fretNum-1][0]+"px").css("margin-left", neck.frets[strNum-1][fretNum-1][1]+"px");
 	$("#neckArea_string").html(strNum);
 	$("#neckArea_fret").html(fretNum);
-	QuestNote = neck.notes[strNum-1][fretNum-1];
+	questNote = neck.notes[strNum-1][fretNum-1];
 }
 
 function reset() { //функция для сброса счетчика вопросов
@@ -53,8 +53,8 @@ function start() { 							//функция для запуска последо�
 	});
 	$(".neckArea_answer").click(function() {		//по клику на кнопку ответа проверяем правильность ответа и отображаем результат в блоке вопроса-ответа
 		initialQuestion();
-		AnswNote = $(this).html();
-		if (QuestNote == AnswNote) {
+		answNote = $(this).html();
+		if (questNote == answNote) {
 			trueCounter++;
 			$(this).addClass("neckArea_answer-true");
 			$("#neckArea_infoString").html("Верно!");
@@ -62,7 +62,7 @@ function start() { 							//функция для запуска последо�
 		}
 		else {
 			$(this).addClass("neckArea_answer-false");
-			$("p:contains("+QuestNote+")").addClass("neckArea_answer-true");
+			$("p:contains("+questNote+")").addClass("neckArea_answer-true");
 			$("#neckArea_infoString").html("Неверно!");
 			$("#neckArea_nextButton").css("display", "inline-block");
 		}
