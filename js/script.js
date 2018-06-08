@@ -1,4 +1,4 @@
-var neck = {
+var neck = { //Модель грифа - латинское обозначение нот и координаты соответсвующих ладов. 
 	notes: [["F ", "F#/Gb ", "G ", "G#/Ab ", "A ", "A#/Bb ", "B ", "C ", "C#/Db ", "D ", "D#/Eb ", "E "],
 					["C ", "C#/Db ", "D ", "D#/Eb ", "E ", "F ", "F#/Gb ", "G ", "G#/Ab ", "A ", "A#/Bb ", "B "],
 					["G#/Ab ", "A ", "A#/Bb ", "B ", "C ", "C#/Db ", "D ", "D#/Eb ", "E ", "F ", "F#/Gb ", "G "],
@@ -14,17 +14,16 @@ var neck = {
 
 };
 
-var QuestNote = "C ";
-var AnswNote = "C ";
-var trueCounter = 0;
-var allCounter = 0;
-var fretsCount = 12;
-var modeStrings = 6;
-var modeFrets = 12;
-var modeOffsetString = 0;
-var strMode = "";
+var QuestNote = "C "; //Загаданная нота
+var AnswNote = "C "; //Нота ответа
+var trueCounter = 0; //Количество верный ответов
+var allCounter = 0; //Количество заданных вопросов
+var modeStrings = 6; //количество струн, на которых может быть загаданна нота
+var modeFrets = 12; //Количество ладов, на которых может быть загаданна нота
+var modeOffsetString = 0; //сдвиг для участвующих в вопросах струн
+var strMode = "";	//Переменная для считывания режима
 
-function neckNotes() {
+function neckNotes() { //функция для генерации ноты на грифе
 	var strNum = Math.ceil(Math.random()*modeStrings+modeOffsetString);
  	var fretNum = Math.ceil(Math.random()*modeFrets);
 	$("#neckArea_pointer").css("margin-top", neck.frets[strNum-1][fretNum-1][0]+"px").css("margin-left", neck.frets[strNum-1][fretNum-1][1]+"px");
@@ -33,14 +32,14 @@ function neckNotes() {
 	QuestNote = neck.notes[strNum-1][fretNum-1];
 }
 
-function reset() {
+function reset() { //функция для сброса счетчика вопросов
 	trueCounter = 0;
 	allCounter = 0;
 	$("#controlArea_trueAns").html(trueCounter);
 	$("#controlArea_allAns").html(allCounter);
 }
 
-function initialQuestion() {
+function initialQuestion() { //функция для подготовки блока вопроса-ответа для очередного вопроса
 	$(".neckArea_answer-true").removeClass("neckArea_answer-true");
 	$(".neckArea_answer-false").removeClass("neckArea_answer-false");
 	$("#neckArea_infoString").html("Какая нота находитя на <span id='neckArea_string'></span> струне на <span id='neckArea_fret'></span> ладу?");
@@ -48,11 +47,11 @@ function initialQuestion() {
 	$(".neckArea_answer").css("pointer-events", "auto");
 }
 
-function start() {
-	$(document).ready(function() {
+function start() { 							//функция для запуска последовательности вопросов
+	$(document).ready(function() { 
 		neckNotes();
 	});
-	$(".neckArea_answer").click(function() {
+	$(".neckArea_answer").click(function() {		//по клику на кнопку ответа проверяем правильность ответа и отображаем результат в блоке вопроса-ответа
 		initialQuestion();
 		AnswNote = $(this).html();
 		if (QuestNote == AnswNote) {
@@ -73,20 +72,20 @@ function start() {
 		$(".neckArea_answer").css("pointer-events", "none");
 	});
 
-	$("#neckArea_nextButton").click(function() {
-		initialQuestion();
+	$("#neckArea_nextButton").click(function() { //при нажатии на кнопку "следующий вопрос" подготавливаем блок вопроса-ответа и вызываем функцию
+		initialQuestion();												 //генерации ноты на грифе
 		neckNotes();
 	});
 
-	$(".controlArea_button-reset").click(function() {
+	$(".controlArea_button-reset").click(function() { //обработчик нажатия кнопки сброса
 		reset();
 	});	
 
-	$(".controlArea_button-mode").click(function() {
+	$(".controlArea_button-mode").click(function() { //переключение режимов по нажатию на одну из кнопок смены режима
 		$(".controlArea_button-active").removeClass("controlArea_button-active");
 		$(this).addClass("controlArea_button-active");
 		strMode = $(this).html();
-		switch (strMode) {
+		switch (strMode) {										//проверяем какой режим выбран
 			case "Все струны до 3 лада": 
 				modeFrets = 3;
 				modeStrings = 6;
@@ -103,17 +102,17 @@ function start() {
 				modeOffsetString = 0;
 				break;
 		}
-		reset();
-		initialQuestion();
-		neckNotes();
+		reset();											//После распознания выбранного режима обнуляем счетчик вопросов, 
+		initialQuestion();						//подготавливаем блок вопрос-ответа,
+		neckNotes();									//генерируем ноту на грифе
 	}); 
-
-	$("#neckArea_teleButton").click(function() {
+																					//обработчики нажатия на кнопки выбора вида грифа
+	$("#neckArea_teleButton").click(function() {		//гриф "Telecaster"
 		$(".neckArea_fretTypeButton-active").removeClass("neckArea_fretTypeButton-active");
 		$(this).addClass("neckArea_fretTypeButton-active");
 		$("#neckArea").css("background", "url('../img/tele_neck.png') no-repeat center");
 	});
-	$("#neckArea_stratButton").click(function() {
+	$("#neckArea_stratButton").click(function() {		//гриф "Stratocaster"
 		$(".neckArea_fretTypeButton-active").removeClass("neckArea_fretTypeButton-active");
 		$(this).addClass("neckArea_fretTypeButton-active");
 		$("#neckArea").css("background", "url('../img/strat_neck.png') no-repeat center");
