@@ -110,12 +110,12 @@ function start() { 							//функция для запуска последо�
 	$("#neckArea_teleButton").click(function() {		//гриф "Telecaster"
 		$(".neckArea_fretTypeButton-active").removeClass("neckArea_fretTypeButton-active");
 		$(this).addClass("neckArea_fretTypeButton-active");
-		$("#neckArea").css("background", "url('../img/tele_neck.png') no-repeat center");
+		$("#neckArea").css("background", "url('img/tele_neck.png') no-repeat center");
 	});
 	$("#neckArea_stratButton").click(function() {		//гриф "Stratocaster"
 		$(".neckArea_fretTypeButton-active").removeClass("neckArea_fretTypeButton-active");
 		$(this).addClass("neckArea_fretTypeButton-active");
-		$("#neckArea").css("background", "url('../img/strat_neck.png') no-repeat center");
+		$("#neckArea").css("background", "url('img/strat_neck.png') no-repeat center");
 	});
 }
 
